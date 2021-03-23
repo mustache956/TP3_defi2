@@ -81,7 +81,7 @@ int chercheMotArbre(Noeud *racine,char *str)
   	}
 }
 
-
+/*fonction permettant de trouver tout les mots de 5 lettres communs aux cinq séquences*/
 char *chercheMotCommun (Noeud *racine, char* mot, int prof) {
 
 	int sum = 0;
@@ -122,6 +122,7 @@ char *chercheMotCommun (Noeud *racine, char* mot, int prof) {
 
 }
 
+/*fonction permettant de lancer la recherche des mots de 5 lettres communs aux cinq sequences*/
 void commun(Noeud *racine) {
   //printf("ai");
 	char mot[6] = "";
