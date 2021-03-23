@@ -38,7 +38,7 @@ void ajouteMotArbre(Noeud *racine,char *str,int seq)
 
 	racine->tab[seq] = 1;
 	
-	if (str[1] == '\0'){
+	if (str[0] == '\0'){
 		//racine->term = 1;
 		return;
   	}
@@ -82,30 +82,53 @@ int chercheMotArbre(Noeud *racine,char *str)
 }
 
 
-/*char *chercheMotCommmun (Noeud *racine, char* mot, int prof) {
-	
+char *chercheMotCommun (Noeud *racine, char* mot, int prof) {
+
 	int sum = 0;
 	
-	if (prof == 5)
-		return mot;
+
 	
 	for (int i = 0; i < 5; i++) {
-		if (racine->fils[ref[str[0]-'A']]->tab[i] == 1) {
+		if (racine->tab[i] == 1) {
 			sum++;
 		}
 	}
 	
 	
+	
 	if (sum == 5) {
-		mot[prof] = 
 		for (int i = 0; i < 4; i++) {
-			chercheMotCommun(racine, mot, prof+1);
+			if(racine->fils[i] != NULL) {
+				mot[prof] = ref2[i]+'A';
+        
+				//printf("%d     ", ref2[i]);
+				//printf("%c     ", ref2[i]+ 'A');
+				//printf("mot = %s\n", mot);
+
+				chercheMotCommun(racine->fils[i], mot, prof+1);
+				mot[prof] = '\0';
+			}
 		}
 	}
+  else
+    return NULL;
 
-}*/
+  if (prof == 5)
+	  printf("le mot est %s\n", mot);
+  else   
+		//printf("le mot est pas bon %s\n", mot);
+  
+	return NULL;
 
+}
 
+void commun(Noeud *racine) {
+  //printf("ai");
+	char mot[6] = "";
+	chercheMotCommun(racine, mot, 0);
+	return;
+
+}
 
 
 

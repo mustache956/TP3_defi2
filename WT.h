@@ -37,7 +37,9 @@ void ajouteMotArbre(Noeud *racine,char *str,int seq);
 /* Cherche un mot dans l'arbre                                                */
 int chercheMotArbre(Noeud *racine,char *str);
 
-char *chercheMotCommmun(Noeud *racine, char *mot, int prof);
+char *chercheMotCommun(Noeud *racine, char *mot, int prof);
+
+void commun(Noeud *racine);
 
 
 #endif

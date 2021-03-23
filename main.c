@@ -46,9 +46,10 @@ int main(int argc, char *argv[]) {
 */
 	
 	printf("%d\n", chercheMotArbre(racine, "AAAAAAAAAA"));
-	printf("%d\n",chercheMotArbre(racine, "A"));
+	printf("%d\n",chercheMotArbre(racine, "AAGAA"));
   printf("present dans la liste 1 :%d\n",chercheMotArbre(racine, "CCGGGG"));
 
+	commun(racine);
 
 
 
