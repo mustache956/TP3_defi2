@@ -36,18 +36,19 @@ Noeud *nouveauNoeud()
 void ajouteMotArbre(Noeud *racine,char *str,int seq)
 {
 
-  racine->tab[seq] = 1;
-	/*if (str[0] == '\0'){
-		racine->term = 1;
+	racine->tab[seq] = 1;
+	
+	if (str[1] == '\0'){
+		//racine->term = 1;
 		return;
-  	}*/
-  	
-  	
+  	}
+
+	
+	
 	if (racine->fils[ref[str[0]-'A']] == NULL)
 	  	racine->fils[ref[str[0]-'A']] = nouveauNoeud();
 	
-	racine->tab[seq] = 1;
-	
+
 	ajouteMotArbre(racine->fils[ref[str[0]-'A']], str+1, seq);
   	return ;
 }
@@ -61,7 +62,7 @@ int chercheMotArbre(Noeud *racine,char *str)
 {
 	if (str[1] == '\0'){
 		for (int i = 0; i < 5; i++) {
-				if (racine->fils[ref[str[0]-'A']]->tab[i] != 1) {
+				if (racine->tab[i] != 1) {
 					return 0;
 				}
 			}
